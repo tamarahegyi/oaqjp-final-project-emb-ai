@@ -1,5 +1,6 @@
 import requests
 import json  # Import the json library to handle JSON serialization
+from pprint import pprint
 
 def emotion_detector(text_to_analyze):
     url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
@@ -43,7 +44,7 @@ def emotion_detector(text_to_analyze):
     }
 
     # Return the result as a JSON string
-    return json.dumps(result)  # Serialize the dictionary to JSON format
+    return result  # Serialize the dictionary to JSON format
 
 if __name__ == "__main__":
     text = "I love the dark"  # Change the input text for testing
